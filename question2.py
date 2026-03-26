@@ -1,8 +1,25 @@
 import pandas as pd 
+import sqlite3
 
-df = pd.read_csv('tracks_cleaned.csv')
+conn = sqlite3.connect("spotify.db")
 
-print(df.columns)
+query = """
+SELECT 
+    decade,
+    popularity,
+    danceability,
+    energy,
+    acousticness,
+    valence,
+    tempo,
+    loudness,
+    speechiness,
+    liveness
+FROM tracks
+WHERE popularity IS NOT NULL
+"""
+
+df = pd.read_sql(query, conn)
 
 features = [
     'danceability', 'energy', 'acousticness', 'valence', 'tempo', 
@@ -18,3 +35,5 @@ for decade in sorted(df['decade'].unique()):
 
 corr_df = pd.DataFrame(results)
 print(corr_df)
+
+corr_df.to_csv("correlation_results.csv", index=True)
