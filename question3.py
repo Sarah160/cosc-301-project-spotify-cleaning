@@ -37,6 +37,7 @@ print("Correlation between tracks released and followers:", correlation)
 print(merged[["name", "year", "tracks_released", "followers"]].head(10))
   #create the final merge table
 merged.to_sql("question3_analysis", conn, if_exists="replace", index=False)
+merged.to_csv("question3_output.csv", index=False)
 
 
 conn.close()
