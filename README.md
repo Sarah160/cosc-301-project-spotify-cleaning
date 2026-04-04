@@ -1,6 +1,7 @@
 # cosc-301-project-spotify-cleaning
 
 Hits Through the Decades: Unpacking What Makes Music Popular
+
 This project analyzes how the audio characteristics of popular music have evolved across decades and investigates the factors that contribute to track and artist success. Using the Spotify dataset (1920–2020) sourced from Kaggle, we examine key audio features — including danceability, energy, acousticness, valence, tempo, loudness, speechiness, and liveness — to identify long-term trends and their relationship with track popularity. The analysis also explores whether artist productivity, measured by annual track releases, is associated with greater audience reach as proxied by follower count.
 
 The dataset can be downloaded from Kaggle using the following command:
